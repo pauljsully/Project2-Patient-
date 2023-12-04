@@ -5,7 +5,7 @@ const withAuth = require('../utils/auth')
 
 // we need to have basic routes to all user patients/individual patients
 // we also need routes for POST, PUT, and DELETE patients
-// GET all galleries for homepage
+// GET all patients
 router.get('/', async (req, res) => {
     try {
       const dbPatientData = await Patient.findAll({
@@ -61,7 +61,7 @@ router.get('/', async (req, res) => {
     }
   });
   
-  // GET one painting
+
   // Use the custom middleware before allowing the user to access the painting
   
   router.get('/login', (req, res) => {
