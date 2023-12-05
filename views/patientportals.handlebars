@@ -1,0 +1,13 @@
+ <!-- Handlebars template for patient data -->
+    {{#if patientData}}
+      <div class="patient-info">
+        <h2>Patient Information</h2>
+        <ul>
+          {{#each patientData}}
+            <li>{{this.name}} - {{this.age}} years old</li>
+          {{/each}}
+        </ul>
+      </div>
+    {{else}}
+      <p>No patient data available.</p>
+    {{/if}}
