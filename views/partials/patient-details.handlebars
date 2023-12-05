@@ -1,12 +1,13 @@
 <section class="card">
   <a href="/patient/{{id}}">
-    <header>{{name}}</header>
-
+    <header>{{patient.name}}</header>
+    <section class="patient_photo">
+      <img src="images/{{patient.patient_photo}}" alt="">
+    </section>
     <div class="card-body">
-      <p>Height: {{height}} cm</p>
-      <p>Weight: {{weight}} kg</p>
-      <p>Age: {{age}} years</p>
-      <p>Description: {{description}}</p>
+      <p>Age: {{patient.age}} years</p>
+      <p>Weight: {{patient.weight}} kg</p>
+      <p>Description: {{patient.description}}</p>
     </div>
   </a>
 </section>
