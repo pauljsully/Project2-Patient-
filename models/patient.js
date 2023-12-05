@@ -1,5 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
-const sequelize = require('/config/connection');
+const sequelize = require('../config/connection');
 
 class Patient extends Model {}
 
@@ -45,4 +45,3 @@ Patient.init(
 
 module.exports = Patient;
 
-// i ahve no clue what the syntax error is. I will ask mohammed when i get on
