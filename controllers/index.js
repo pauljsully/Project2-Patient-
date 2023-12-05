@@ -1,11 +1,10 @@
 const router = require('express').Router();
 
 const apiRoutes = require('./api');
-const patientRoutes = require('./patientRoutes.js');
+const loginRoutes = require('./loginRoutes');
 
 // i want to make the hompage the login page
-router.use('/', homeRoutes);
+router.use('/', loginRoutes);
 router.use('/api', apiRoutes);
-router.use('/patient', patientRoutes);
 
 module.exports = router;

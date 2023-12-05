@@ -1,7 +1,7 @@
 const router = require('express').Router();
-const { Patient, User } = require('../models');
+const { Patient, User } = require('../../models');
 // Import the custom middleware
-const withAuth = require('../utils/auth')
+// const withAuth = require('../../utils/auth')
 
 // we need to have basic routes to all user patients/individual patients
 // we also need routes for POST, PUT, and DELETE patients
@@ -33,7 +33,8 @@ router.get('/', async (req, res) => {
   
   // GET one patient
   // Use the custom middleware before allowing the user to access the gallery
-  router.get('/patient/:id', withAuth, async (req, res) => {
+  //router.get('/patient/:id', withAuth, async (req, res) => {
+  router.get('/patient/:id', async (req, res) => {
     try {
       const dbPatientData = await Patient.findByPk(req.params.id, {
         include: [
