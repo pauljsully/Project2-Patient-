@@ -4,17 +4,17 @@ const userdata = [
   {
     username: 'Juell Anthony',
     email: 'ju3llanthony@gmail.com',
-    password: '#',
+    password: 'password123',
   },
   {
     username: 'Paul Sulivan',
     email: 'paul8sullivan@gmail.com',
-    password: '#',
+    password: 'password123',
   },
   {
     username: 'Sammy Hassouneh',
     email: 'hassounehsam@gmail.com',
-    password: '#',
+    password: 'password123',
   },
 ];
 
