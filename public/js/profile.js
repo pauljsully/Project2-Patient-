@@ -1,47 +1,62 @@
 const newFormHandler = async (event) => {
-    event.preventDefault();
-  
-    const name = document.querySelector('#project-name').value.trim();
-    const needed_funding = document.querySelector('#project-funding').value.trim();
-    const description = document.querySelector('#project-desc').value.trim();
-  
-    if (name && needed_funding && description) {
-      const response = await fetch(`/api/projects`, {
+  event.preventDefault();
+
+  const name = document.querySelector('#patient-name').value.trim();
+  const age = document.querySelector('#patient-age').value.trim();
+  const weight = document.querySelector('#patient-weight').value.trim();
+  const height = document.querySelector('#patient-height').value.trim();
+  const description = document.querySelector('#patient-desc').value.trim();
+
+  if (name && age && weight && height && description) {
+    try {
+      const response = await fetch('/api/patients', {
         method: 'POST',
-        body: JSON.stringify({ name, needed_funding, description }),
+        body: JSON.stringify({ name, age, weight, height, description }),
         headers: {
           'Content-Type': 'application/json',
         },
       });
-  
+
       if (response.ok) {
         document.location.replace('/profile');
       } else {
-        alert('Failed to create project');
+        const errorMessage = await response.text();
+        alert(`Failed to create patient: ${errorMessage}`);
       }
+    } catch (error) {
+      console.error('Error during fetch:', error);
+      alert('An unexpected error occurred while creating the patient.');
     }
-  };
-  
-  const delButtonHandler = async (event) => {
-    if (event.target.hasAttribute('data-id')) {
-      const id = event.target.getAttribute('data-id');
-  
-      const response = await fetch(`/api/projects/${id}`, {
+  }
+};
+
+const delButtonHandler = async (event) => {
+  if (event.target.classList.contains('delete-patient-btn')) {
+    const id = event.target.getAttribute('data-id');
+
+    try {
+      const response = await fetch(`/api/patient/${id}`, {
         method: 'DELETE',
       });
-  
+
       if (response.ok) {
         document.location.replace('/profile');
       } else {
-        alert('Failed to delete project');
+        const errorMessage = await response.text();
+        alert(`Failed to delete patient: ${errorMessage}`);
       }
+    } catch (error) {
+      console.error('Error during fetch:', error);
+      alert('An unexpected error occurred while deleting the patient.');
     }
-  };
-  
-  document
-    .querySelector('.new-project-form')
-    .addEventListener('submit', newFormHandler);
-  
-  document
-    .querySelector('.project-list')
-    .addEventListener('click', delButtonHandler);
+  }
+};
+
+// Use a higher-level parent element for event delegation
+document.body.addEventListener('submit', (event) => {
+  if (event.target.classList.contains('new-patient-form')) {
+    newFormHandler(event);
+  }
+});
+
+document.body.addEventListener('click', delButtonHandler);
