@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Patient, User } = require('../../models');
+const { Patient } = require('../../models');
 // Import the custom middleware
 // const withAuth = require('../../utils/auth')
 
