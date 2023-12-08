@@ -24,19 +24,21 @@ Patient Plus is a Node.js application designed to streamline healthcare manageme
 
 * Patient Management: Easily access and manage patient records within the application.
 
-Intuitive Interface: User-friendly design for a seamless and efficient user experience.
+* Intuitive Interface: User-friendly design for a seamless and efficient user experience.
 
-Session Handling: Utilizes session management for a secure and persistent user experience.
+* Session Handling: Utilizes session management for a secure and persistent user experience.
 
-Database Integration: Powered by Sequelize ORM, Patient Plus integrates with relational databases, ensuring data integrity.
+* Database Integration: Powered by Sequelize ORM, Patient Plus integrates with relational databases, ensuring data integrity.
 
 ## Getting Started
 
+Heroku URL: (https://patientplusportal-ec99a88081f0.herokuapp.com/)
+
 ### Prerequisites
 
-Node.js: Ensure Node.js is installed on your system. Download Node.js
+Node.js: Ensure Node.js is installed on your system. Download Node.js (20.10.0)
 
-### Installation
+### Installation Using Code
 
 1. Clone the repository:
 ```
@@ -65,6 +67,7 @@ nodemon server.js
 
 ## Usage
 
+* Resgister your account and begin to add patients and their information!
 
 ## Contributing
 
